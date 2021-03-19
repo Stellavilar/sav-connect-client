@@ -5,9 +5,15 @@ import '../styles/index.scss';
 import Login from './Login';
 import Header from './Header';
 import Dashboard from './Dashboard';
+import AdminMenu from './AdminMenu';
+import WorkerMenu from './WorkerMenu';
 
 
 const App = () => {
+
+  //Check if user is admin or not
+  const isAdmin =localStorage.getItem('isAdmin');
+
   return (
     <div className="App">
       <Route exact path='/'>
@@ -16,9 +22,9 @@ const App = () => {
       <Route exact path='/dashboard'>
         <Header />
           <div className='main-page'> 
+          {isAdmin === 'true' ? <AdminMenu/> : <WorkerMenu/>}
             <Dashboard /> 
           </div>
-        <Dashboard />
       </Route>
     </div>
   );

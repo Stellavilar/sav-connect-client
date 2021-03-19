@@ -103,6 +103,36 @@ body {
 
     }
 }
+.dashboard-menu {
+  background-color: $blue;
+  width: 15%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+
+  .ui.dropdown>.text {
+    font-size: 1.6em;
+    font-family: 'Montserrat', sans-serif; 
+  }
+  .ui.vertical.menu .item > i.icon {
+    display: none;
+  }
+  .ui.vertical.menu .item {
+    background-color: $blue;
+    color: white;
+  }
+  .ui.vertical.menu{
+    & :hover {
+      background-color: white;
+      color: $blue;
+    }
+    border: none;
+  }
+  .ui.menu .ui.dropdown .menu > .item {
+    color: $blue !important;
+    font-size: 1.3em !important;
+  }
+}
 
 
 // Mobile version
@@ -166,7 +196,6 @@ body {
       }
     }
   }
+  .dashboard-menu {display: none}
 
-
-  
 }
