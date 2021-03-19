@@ -191,6 +191,32 @@ body {
     color: $blue;
   }
 }
+.tag-list {
+  // min-height: 100vh;
+  padding: 25px;
+  width: 150vw;
+  .tags {
+    display: flex;
+    width: 50%;
+    flex-wrap: wrap;
+  }
+  .tag {
+    padding: 6px;
+    border-radius: 9px;
+    width: 50%;
+    text-align: center;
+    font-weight: bold;
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .fa, .far, .fas {
+    &:hover {
+      font-size: 1.5em;
+    }
+  }
+}
 
 
 // Mobile version
@@ -335,6 +361,9 @@ body {
     }
 
 
+  }
+  .tag-list .tag {
+    width: 100%;
   }
   .tag-list .tag {
     width: 100%;
