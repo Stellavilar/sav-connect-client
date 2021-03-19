@@ -133,6 +133,64 @@ body {
     font-size: 1.3em !important;
   }
 }
+.dashboard {
+  min-height: 100vh;
+  padding: 15px;
+  width: 65vw;
+ 
+  .ui.segment.grid-details {
+    width: 100%;
+  }
+  .ui.grid {
+    width: 100%;
+  }
+  .ui.grid > .row{
+    width: 70vw;
+  }
+  .ui.grid > .row > .column {
+    padding: 0px;
+  }
+  .row.grid-details {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: space-around;
+    font-weight: bold;
+    font-size: 0.9em;
+    border-bottom: #2c3e50 solid 0.1px;
+      &:hover {
+        background-color: #d1cfcf;
+      }
+      i {
+        margin-right: 11px;
+        font-size: 1.2em;
+        &:hover {
+          font-size: 1.5em;
+          color: sienna;
+        }
+      }
+
+  }
+  .dashboard-tag {
+    padding: 6px;
+    border-radius: 9px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    border: solid 0.1px gray;
+  
+  }
+  .ui.segment {
+    color: $grey;
+    background-color: $blue;
+    font-size: 1em;
+    text-align: center;
+  }
+  .ui.segment.grid-details {
+    background-color: $grey;
+    color: $blue;
+  }
+}
 
 
 // Mobile version
@@ -197,5 +255,89 @@ body {
     }
   }
   .dashboard-menu {display: none}
+  .dashboard {
+
+    width: 100vw;
+
+    .ui.header {
+      width: 100vw;
+    }
+
+    .ui.equal.width.grid {
+      display: none;
+    }
+
+    .row.grid-details {
+      display: flex;
+      flex-direction: column;
+
+        .column {
+          width: 100vw;
+
+          .grid-details {
+            width: 100vw;
+          }
+
+          .dashboard-tag {
+            width: 150px;
+          }
+        }
+        .column.options {
+          display: flex;
+          align-self: center;
+          margin-top: 15px;
+        }
+        
+    }
+
+    .row.grid-details .column.tags {
+      margin-left: 40%;
+      margin-top: 20px;
+    }
+    .row.grid-details i {
+      font-size: 1.9em;
+      margin: 0.7em;
+    }
+  }
+  .repair-sheet {
+    width: 100vw;
+
+    .ui.header {
+      text-align: start;
+    }
+
+    .repair-sheet-options {
+      
+      svg {
+        display: none;
+      }
+      .tag-area {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20%;
+      }
+      
+    }
+    
+  }
+  .tab {
+    width: 100vw;
+    .tab-form {
+      .tag-list .tag{
+        width: 70%;
+        }
+
+      .tag-area {
+        .tags-on-form{
+          width: 50%;
+        }
+      }
+    }
+
+
+  }
+  .tag-list .tag {
+    width: 100%;
+  }
 
 }

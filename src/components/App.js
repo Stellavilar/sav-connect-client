@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState, useEffect } from 'react';
 import { Route } from 'react-router-dom';
 import '../styles/index.scss';
+import axios from 'axios';
 
 import Login from './Login';
 import Header from './Header';
@@ -14,6 +15,20 @@ const App = () => {
   //Check if user is admin or not
   const isAdmin =localStorage.getItem('isAdmin');
 
+  //Get all repairs sheet
+  const [ repair, setRepair ] = useState([]);
+  const repairsSheet = () => {
+    axios.get('repairSheets')
+      .then((res) => {
+        setRepair(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  };
+
+  useEffect(() => { repairsSheet() }, [])
+
   return (
     <div className="App">
       <Route exact path='/'>
@@ -23,7 +38,7 @@ const App = () => {
         <Header />
           <div className='main-page'> 
           {isAdmin === 'true' ? <AdminMenu/> : <WorkerMenu/>}
-            <Dashboard /> 
+            <Dashboard repair={repair} /> 
           </div>
       </Route>
     </div>
