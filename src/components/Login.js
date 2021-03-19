@@ -20,7 +20,7 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://ec2-3-84-161-129.compute-1.amazonaws.com/login', userProfil)
+        axios.post('login', userProfil)
             .then((res) => {
                 if(res.data.token){
                     if(res.data.isAdmin === true){

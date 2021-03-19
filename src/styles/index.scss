@@ -15,6 +15,9 @@ body {
 };
 
 //Desktop version
+.main-page {
+  display: flex;
+}
 .login {
     width: 100vw;
     min-height: 100vh;
@@ -53,6 +56,53 @@ body {
         }
     }
 }
+.navbar {
+  background-color: $orange;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+    img {
+      width: 5%;
+    }
+    .fa, .fas {
+      font-size: 3em;
+      color: $blue;
+      padding: 9px;
+    }
+    .profil-buttons {
+      display: flex;
+      align-items: center;
+       .ui.button{
+          margin-right: 20px;
+       }
+    }
+    .ui.icon.input {
+      width: 250px;
+    }
+    .burger-button {
+      display: none;
+    }
+    
+}
+.results {
+  position: absolute;
+  z-index: 1;
+  background-color: $white;
+  left: 37%;
+  border-radius: 10px;
+  border: $blue solid 0.1px;
+
+    .result-content {
+      font-size: 1.3em;
+      padding: 8px;
+      border-bottom: $blue solid 0.1px;
+      &:hover {
+        background-color: #d1cfcf;
+      }
+
+    }
+}
 
 
 // Mobile version
@@ -68,6 +118,51 @@ body {
     .ui.form {
       .field {
         width: 60%;
+      }
+    }
+  }
+  .navbar {
+
+    width: 100vw;
+
+    img {
+      width: 20%
+    }
+    .ui.search {
+      width: 50%;
+      .ui.icon.input {
+        width: 100%;
+      }
+    }
+    .profil-buttons {
+      display: none;
+    }
+    .burger-button {
+      display: block;
+      i {
+        font-size: 2.5em;
+        margin-top: .5em;
+        color: $blue;
+      }
+  
+      .menu.transition.visible {
+        position: fixed;
+        top: 5em;
+        left: 0;
+        width: 100vw;
+        min-height: calc(100vh-5em);
+        border-radius: 0;
+  
+        .item {
+          text-align: center;
+          color: $blue;
+          font-weight: bold;
+          border-bottom: 1px solid;
+          padding: 1.3em 0 !important;
+        }
+        .item.deconnect {
+          background-color: $orange !important;
+        }
       }
     }
   }
