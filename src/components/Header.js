@@ -86,7 +86,6 @@ const Header = () => {
                     </div>
                 <div className='profil-buttons'>
                     <Button color='linkedin' onClick={disconnect} >Déconnexion</Button>
-                    {/* <i className="fas fa-user-circle"></i> */}
                 </div>
                 {isAdmin === 'true' ? <BurgerButtonAdmin/> : <BurgerButtonWorker/>}
                 
