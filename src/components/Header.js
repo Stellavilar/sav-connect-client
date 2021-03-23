@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import logo from '../img/savLogo.png';
 import { Button } from 'semantic-ui-react';
 import { useHistory } from 'react-router-dom';
@@ -15,32 +15,32 @@ const Header = () => {
     const isAdmin =localStorage.getItem('isAdmin');
 
     /**Search */
-    const [ searchText, setSearchText ] = useState('');
-    const [ result, setResults ] = useState([]);
-    const [ open, setOpen ] = useState(false)
+    // const [ searchText, setSearchText ] = useState('');
+    // const [ result, setResults ] = useState([]);
+    // const [ open, setOpen ] = useState(false)
 
-    const getResults = (e) => {
-        const text = searchText;
-        const SEARCH_URL = `search/?q=${text}`;
-        axios
-            .get(SEARCH_URL)
-            .then((res) => {
-                setResults(res.data)          
-            })
-            .catch((err) => {
-                console.log(err);
-            }); 
-    };
+    // const getResults = (e) => {
+    //     const text = searchText;
+    //     const SEARCH_URL = `search/?q=${text}`;
+    //     axios
+    //         .get(SEARCH_URL)
+    //         .then((res) => {
+    //             setResults(res.data)          
+    //         })
+    //         .catch((err) => {
+    //             console.log(err);
+    //         }); 
+    // };
     
    
-    const handleChange = (e) => {
-        setSearchText(e.target.value);
-        if(e.target.value === ""){
-            setOpen(false)
-        }else{
-            setOpen(true)
-        }
-    };
+    // const handleChange = (e) => {
+    //     setSearchText(e.target.value);
+    //     if(e.target.value === ""){
+    //         setOpen(false)
+    //     }else{
+    //         setOpen(true)
+    //     }
+    // };
    
     const disconnect = () => {
         const token = localStorage.getItem('token');
@@ -58,16 +58,16 @@ const Header = () => {
           })
     };
 
-    const handleClick = (e) => {
-        const getId = e.target.id;
-        history.push(`/RepairSheet/${getId}`);
-        window.location.reload(false)
-    }
+    // const handleClick = (e) => {
+    //     const getId = e.target.id;
+    //     history.push(`/RepairSheet/${getId}`);
+    //     window.location.reload(false)
+    // }
     
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    useEffect(() => {getResults()}, []);
+    // useEffect(() => {getResults()}, []);
 
-    const showResult = result.map((results) => <div className='result-content' key={results.id} onClick={handleClick} id={results.order_number} >{results.order_number} {results.lastname} {results.firstname} {results.device_name} </div>)
+    // const showResult = result.map((results) => <div className='result-content' key={results.id} onClick={handleClick} id={results.order_number} >{results.order_number} {results.lastname} {results.firstname} {results.device_name} </div>)
     
     return (
         <>
@@ -79,7 +79,7 @@ const Header = () => {
                                 className="prompt" 
                                 type="text" 
                                 placeholder="Rechercher une fiche SAV..."
-                                onChange={handleChange}
+                                // onChange={handleChange}
                                 />
                             <i className="search icon"></i>
                         </div>
@@ -90,7 +90,7 @@ const Header = () => {
                 {isAdmin === 'true' ? <BurgerButtonAdmin/> : <BurgerButtonWorker/>}
                 
             </div>
-                { open ? <div className="results">{showResult}</div> : null}
+                {/* { open ? <div className="results">{showResult}</div> : null} */}
             </>
 
     );
