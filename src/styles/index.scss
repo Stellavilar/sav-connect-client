@@ -498,6 +498,35 @@ body {
     margin-bottom: 35px;
   }
 }
+.worker-form {
+  min-height: 100vh;
+  padding: 25px;
+  
+  .ui.form {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+
+      label {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: $blue;
+      }
+      .field {
+        width: 70%;
+      }
+      .buttons {
+        margin: 25px;
+        align-items: center;
+      }
+      .ui.checkbox {
+        margin-right: 40px;
+      }
+  }
+  .ui.header {
+    margin-bottom: 35px;
+  }
+}
 
 
 // Mobile version
