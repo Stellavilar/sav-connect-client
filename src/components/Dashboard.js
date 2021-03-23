@@ -15,9 +15,10 @@ const Dashboard = ({repair}) => {
         setGetOpen(true);
     };
     const handleConfirm = () => {
+        const token = localStorage.getItem('token');
         axios.get(`repairSheet/archive/${getId}`, {
             headers: {
-                Authorization: 'Bearer ' + localStorage.getItem('token')
+                Authorization: 'Bearer ' + token
             }
         })
         .then((res) => {
