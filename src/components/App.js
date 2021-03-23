@@ -25,6 +25,8 @@ import WorkerEdit from './Worker/WorkerEdit';
 import WorkerForm from './Worker/WorkerForm';
 import ActionList from './ActionList';
 import ActionForm from './ActionForm';
+import PanneForm from './PanneForm';
+import PanneList from './PanneList';
 
 const App = () => {
 
@@ -248,6 +250,26 @@ const App = () => {
           <div className='main-page'>
           {isAdmin === 'true' ? <AdminMenu/> : <WorkerMenu/>}
           <ActionForm/>
+          <Activity /> 
+          </div>
+          </>
+        }>
+        </Route>
+        <Route exact path="/PanneForm" render={()=>!token ? <Redirect to='/'/> :  <>
+          <Header />
+          <div className='main-page'>
+          {isAdmin === 'true' ? <AdminMenu/> : <WorkerMenu/>}
+          <PanneForm />
+          <Activity /> 
+          </div>
+          </>
+        }>
+        </Route>
+        <Route exact path="/PanneList" render={()=>!token ? <Redirect to='/'/> :  <>
+          <Header />
+          <div className='main-page'>
+          {isAdmin === 'true' ? <AdminMenu/> : <WorkerMenu/>}
+          <PanneList />
           <Activity /> 
           </div>
           </>
