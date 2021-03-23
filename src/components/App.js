@@ -13,6 +13,7 @@ import TagForm from './TagForm';
 import Activity from './Activity';
 import StepFormOne from './RepairSheetForm/StepFormOne';
 import RepairSheetForm from './RepairSheetForm/RepairSheetForm';
+import RepairSheet from './RepairSheetInfos/RepairSheet';
 
 
 const App = () => {
@@ -75,6 +76,15 @@ const App = () => {
           <div className='main-page'>
           {isAdmin === 'true' ? <AdminMenu/> : <WorkerMenu/>}
           <RepairSheetForm />
+          </div>
+          </>
+        }>
+        </Route>
+        <Route exact path="/RepairSheet/:id" render={()=>!token ? <Redirect to='/'/> :  <>
+          <Header />
+          <div className='main-page'>
+          {isAdmin === 'true' ? <AdminMenu/> : <WorkerMenu/>}
+          <RepairSheet /> 
           </div>
           </>
         }>
