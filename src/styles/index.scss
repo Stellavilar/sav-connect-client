@@ -527,6 +527,48 @@ body {
     margin-bottom: 35px;
   }
 }
+.panne-list {
+  min-height: 100vh;
+  padding: 25px;
+  width: 100vw;
+
+    .ui.segment.panne-segment {
+      display: flex;
+      justify-content: space-between;
+    }
+    i {
+      margin-right: 11px;
+      font-size: 1.2em;
+      &:hover {
+        font-size: 1.5em;
+        color: sienna;
+      }
+    }
+    
+}
+.panne-form {
+  min-height: 100vh;
+  padding: 25px;
+  width: 80%;
+  .ui.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+      label {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: $blue;
+      }
+      .field {
+        width: 70%;
+      }
+      .buttons {
+        margin: 25px;
+        align-items: center;
+      }
+  }
+}
 
 
 // Mobile version
