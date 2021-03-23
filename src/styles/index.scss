@@ -217,6 +217,197 @@ body {
     }
   }
 }
+.activity {
+  width: 100%;
+  min-height: 100vh;
+  padding: 25px;
+
+    .ui.segment {
+      height: 100%;
+      font-size: 1em;
+      width: 100%;
+    }
+    .ui.list .list>.item, .ui.list>.item, ol.ui.list li, ul.ui.list li {
+      margin-bottom: 10px;
+    }
+
+}
+.repair-sheet-form {
+  min-height: 100vh;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+
+  .ui.header {
+    color: $blue;
+  }
+
+  .ui.selection.dropdown {
+    width: 50%;
+  }
+  .row-options {
+    display: flex;
+    justify-content: space-around;
+    &:hover {
+      background-color: $grey;
+    }
+    div {
+      font-size: 1.2em !important;
+      margin-bottom: 20px ;
+      padding: 5px;
+    }
+  }
+
+  .ui.form {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+  
+      label {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: $blue;
+      }
+      .field {
+        width: 50%;
+        // margin: auto;
+      }
+      .buttons {
+        margin: 25px;
+        align-items: center;
+      }
+      select {
+        width: 50%;
+      }
+  }
+}
+.repair-sheet {
+  min-height: 100vh;
+  padding: 25px;
+  width: 70vw;
+
+  .ui.list .list>.item, .ui.list>.item, ol.ui.list li, ul.ui.list li {
+    margin-bottom: 10px;
+  }
+
+  .ui.header {
+    text-align: center;
+  }
+  .repair-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+      .repair-icons {
+        display: flex;
+        justify-content: space-between;
+         i {
+           font-size: 1.3em;
+           margin-right: 15px;
+           color: $blue;
+         }
+      }
+  }
+  .repair-sheet-device {
+    display: flex;
+    justify-content: center;
+
+    .device {
+      font-size: 1.3em;
+      font-weight: bold;
+      margin: 5px;
+    }
+  }
+  .repair-sheet-options {
+    display: flex;
+    justify-content: space-between;
+  }
+  .repair-sheet-one {
+    border-bottom: $blue solid 0.1px;
+    padding: 10px;
+    font-size: 1.2em;
+  }
+  .repair-sheet-client {
+    border-bottom: $blue solid 0.1px;
+    padding: 10px;
+    font-size: 1.2em;
+
+      .repair-span {
+        font-weight: bold;
+      }
+  }
+  .repair-sheet-repair {
+    border-bottom: $blue solid 0.1px;
+    padding: 10px;
+    font-size: 1.2em;
+
+  }
+  .repair-devis {
+    padding: 10px;
+    font-size: 1.2em;
+
+    .amount.description {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .repar-sheet-tag {
+    padding: 11px;
+    margin-bottom: 5px;
+    border-radius: 9px;
+    font-weight: bold;
+  }
+}
+.tab-form {
+  
+  .ui.form {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+      label {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: $blue;
+      }
+      .field {
+        width: 70%;
+      }
+      .buttons {
+        margin: 25px;
+        align-items: center;
+      }
+  }
+  .ui.header.tags-repair {
+    border-top: $grey solid 0.1px;
+    padding-top: 15px;
+  }
+  .tag-area {
+    display: flex;
+    flex-direction: column;
+      .tags-on-form {
+        padding: 6px;
+        border-radius: 9px;
+        width: 15%;
+        text-align: center;
+        font-weight: bold;
+        border: solid 0.1px gray;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+
+        i {
+          margin-right: 11px;
+          font-size: 1.2em;
+          &:hover {
+            font-size: 1.5em;
+          }
+        }
+      }
+  }
+  
+}
 
 
 // Mobile version
@@ -368,5 +559,41 @@ body {
   .tag-list .tag {
     width: 100%;
   }
+  .activity { display: none }
 
+  .repair-sheet {
+    width: 100vw;
+
+    .ui.header {
+      text-align: start;
+    }
+
+    .repair-sheet-options {
+      
+      svg {
+        display: none;
+      }
+      .tag-area {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20%;
+      }
+      
+    }
+    
+  }
+  .tab {
+    width: 100vw;
+    .tab-form {
+      .tag-list .tag{
+        width: 70%;
+        }
+
+      .tag-area {
+        .tags-on-form{
+          width: 50%;
+        }
+      }
+    }
+  }
 }

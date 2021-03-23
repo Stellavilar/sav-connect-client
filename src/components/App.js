@@ -10,6 +10,9 @@ import AdminMenu from './AdminMenu';
 import WorkerMenu from './WorkerMenu';
 import TagList from './TagList';
 import TagForm from './TagForm';
+import Activity from './Activity';
+import StepFormOne from './RepairSheetForm/StepFormOne';
+import RepairSheetForm from './RepairSheetForm/RepairSheetForm';
 
 
 const App = () => {
@@ -29,35 +32,67 @@ const App = () => {
         console.log(err);
       })
   };
+  //Get all customers
+  const [ clients, setClients ] = useState([]);
+  const allCustomers = () => {
+    axios.get('customers')
+      .then((res) => {
+        setClients(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  };
 
-  useEffect(() => { repairsSheet() }, [])
+  useEffect(() => { repairsSheet() }, []);
+  useEffect(() => { allCustomers() }, []);
 
   return (
     <div className="App">
-      <Route exact path='/'>
-        <Login />
-      </Route>
-      <Route exact path='/dashboard'>
-        <Header />
-          <div className='main-page'> 
-          {isAdmin === 'true' ? <AdminMenu/> : <WorkerMenu/>}
-            <Dashboard repair={repair} /> 
-          </div>
-      </Route>
-      <Route exact path="/TagList" render={()=>!token ? <Redirect to='/'/> :  <>
+        <Route exact path='/'>
+          <Login />
+        </Route>
+        <Route exact path='/dashboard'>
           <Header />
-          <div className='main-page'>
+            <div className='main-page'> 
+            {isAdmin === 'true' ? <AdminMenu/> : <WorkerMenu/>}
+              <Dashboard repair={repair} /> 
+              <Activity />
+            </div>
+        </Route>
+        <Route exact path="/RepairSheetForm" render={()=>!token ? <Redirect to='/'/> :  <>
+        <Header />
+        <div className='main-page'>
           {isAdmin === 'true' ? <AdminMenu/> : <WorkerMenu/>}
-          <TagList />
+          <StepFormOne clients={clients}/> 
+          <Activity />
           </div>
           </>
         }>
-      </Route>
-      <Route exact path="/TagForm" render={()=>!token ? <Redirect to='/'/> :  <>
+        </Route>
+        <Route exact path="/RepairSheet/edit/:order_number" render={()=>!token ? <Redirect to='/'/> :  <>
           <Header />
           <div className='main-page'>
           {isAdmin === 'true' ? <AdminMenu/> : <WorkerMenu/>}
-          <TagForm />
+          <RepairSheetForm />
+          </div>
+          </>
+        }>
+        </Route>
+        <Route exact path="/TagList" render={()=>!token ? <Redirect to='/'/> :  <>
+          <Header />
+          <div className='main-page'>
+          {isAdmin === 'true' ? <AdminMenu/> : <WorkerMenu/>}
+            <TagList />
+          </div>
+          </>
+        }>
+        </Route>
+        <Route exact path="/TagForm" render={()=>!token ? <Redirect to='/'/> :  <>
+          <Header />
+          <div className='main-page'>
+          {isAdmin === 'true' ? <AdminMenu/> : <WorkerMenu/>}
+            <TagForm />
           </div>
           </>
         }>
