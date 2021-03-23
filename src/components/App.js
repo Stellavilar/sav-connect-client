@@ -14,7 +14,7 @@ import Activity from './Activity';
 import StepFormOne from './RepairSheetForm/StepFormOne';
 import RepairSheetForm from './RepairSheetForm/RepairSheetForm';
 import RepairSheet from './RepairSheetInfos/RepairSheet';
-
+import ArchiveList from './ArchiveList';
 
 const App = () => {
 
@@ -44,9 +44,22 @@ const App = () => {
         console.log(err);
       })
   };
+  //Get all archives Repair sheets
+  const [ archive, setArchive ] = useState([]);
+  const allArchives = () => {
+    axios.get('archivedRepairSheets')
+      .then((res) => {
+        setArchive(res.data);
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
 
   useEffect(() => { repairsSheet() }, []);
   useEffect(() => { allCustomers() }, []);
+  useEffect(() => { allArchives() }, []);
+
 
   return (
     <div className="App">
@@ -103,6 +116,16 @@ const App = () => {
           <div className='main-page'>
           {isAdmin === 'true' ? <AdminMenu/> : <WorkerMenu/>}
             <TagForm />
+          </div>
+          </>
+        }>
+        </Route>
+        <Route exact path="/archives" render={()=>!token ? <Redirect to='/'/> :  <>
+          <Header />
+          <div className='main-page'>
+          {isAdmin === 'true' ? <AdminMenu/> : <WorkerMenu/>}
+          <ArchiveList archive={archive}/>
+          <Activity /> 
           </div>
           </>
         }>

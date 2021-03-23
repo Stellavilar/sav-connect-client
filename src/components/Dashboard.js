@@ -16,7 +16,6 @@ const Dashboard = ({repair}) => {
     };
     const handleConfirm = () => {
         axios.get(`repairSheet/archive/${getId}`, {
-            withCredentials: true,
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('token')
             }
