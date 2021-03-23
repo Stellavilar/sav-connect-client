@@ -15,6 +15,10 @@ import StepFormOne from './RepairSheetForm/StepFormOne';
 import RepairSheetForm from './RepairSheetForm/RepairSheetForm';
 import RepairSheet from './RepairSheetInfos/RepairSheet';
 import ArchiveList from './ArchiveList';
+import ClientList from './Customer/ClientList';
+import Client from './Customer/Client';
+import ClientForm from './Customer/ClientForm';
+import ClientEdit from './Customer/ClientEdit';
 
 const App = () => {
 
@@ -54,12 +58,12 @@ const App = () => {
       .catch((err) => {
         console.log(err)
       })
-  }
+  };
+
 
   useEffect(() => { repairsSheet() }, []);
   useEffect(() => { allCustomers() }, []);
   useEffect(() => { allArchives() }, []);
-
 
   return (
     <div className="App">
@@ -125,6 +129,46 @@ const App = () => {
           <div className='main-page'>
           {isAdmin === 'true' ? <AdminMenu/> : <WorkerMenu/>}
           <ArchiveList archive={archive}/>
+          <Activity /> 
+          </div>
+          </>
+        }>
+        </Route>
+        <Route exact path="/ClientList" render={()=>!token ? <Redirect to='/'/> :  <>
+          <Header />
+          <div className='main-page'>
+          {isAdmin === 'true' ? <AdminMenu/> : <WorkerMenu/>}
+          <ClientList  clients={clients}/>
+          <Activity /> 
+          </div>
+          </>
+        }>
+        </Route>
+        <Route exact path="/client/:id" render={()=>!token ? <Redirect to='/'/> :  <>
+          <Header />
+          <div className='main-page'>
+          {isAdmin === 'true' ? <AdminMenu/> : <WorkerMenu/>}
+          <Client/>
+          <Activity /> 
+          </div>
+          </>
+        }>
+        </Route>
+        <Route exact path="/clientform" render={()=>!token ? <Redirect to='/'/> :  <>
+          <Header />
+          <div className='main-page'>
+          {isAdmin === 'true' ? <AdminMenu/> : <WorkerMenu/>}
+          <ClientForm/>
+          <Activity /> 
+          </div>
+          </>
+        }>
+        </Route>
+        <Route exact path="/clientEdit/:id" render={()=>!token ? <Redirect to='/'/> :  <>
+          <Header />
+          <div className='main-page'>
+          {isAdmin === 'true' ? <AdminMenu/> : <WorkerMenu/>}
+          <ClientEdit/>
           <Activity /> 
           </div>
           </>
