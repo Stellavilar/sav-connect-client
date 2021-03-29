@@ -642,7 +642,7 @@ body {
   }
   .navbar {
 
-    width: 100vw;
+    width: 100%;
 
     img {
       width: 20%
@@ -668,8 +668,7 @@ body {
         position: fixed;
         top: 5em;
         left: 0;
-        width: 100vw;
-        min-height: calc(100vh-5em);
+        width: 90vw;
         border-radius: 0;
   
         .item {
@@ -677,7 +676,7 @@ body {
           color: $blue;
           font-weight: bold;
           border-bottom: 1px solid;
-          padding: 1.3em 0 !important;
+          padding: 0.9em 0 !important;
         }
         .item.deconnect {
           background-color: $orange !important;
@@ -701,7 +700,7 @@ body {
     .row.grid-details {
       display: flex;
       flex-direction: column;
-
+      border: none;
         .column {
           width: 100vw;
 
@@ -715,7 +714,6 @@ body {
         }
         .column.options {
           display: flex;
-          align-self: center;
           margin-top: 15px;
         }
         
@@ -735,6 +733,7 @@ body {
 
     .ui.header {
       text-align: start;
+      font-size: 1em;
     }
 
     .repair-sheet-options {
@@ -748,6 +747,12 @@ body {
         margin-left: 20%;
       }
       
+    }
+
+    .repair-sheet-device { 
+      .device {
+        font-size: 1em;
+      }
     }
     
   }

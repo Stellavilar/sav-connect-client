@@ -79,7 +79,7 @@ const RepairSheet = () => {
             })
     };
 
-    const urlQrcode = `http://localhost:9090/RepairSheet/${id}`
+    const urlQrcode = `https://stellavilar.github.io/sav-connect-client/#/RepairSheet/${id}`
     const qrSize = 180;
 
     useEffect(() => {getData()}, []);
