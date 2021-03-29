@@ -22,8 +22,7 @@ const Dashboard = ({repair}) => {
             }
         })
         .then((res) => {
-            // window.location.reload(false);
-            console.log(res)
+            window.location.reload(false);
         })
         .catch((err) => {
             console.log(err);
