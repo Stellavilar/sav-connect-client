@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/sav-connect-client/static/css/main.c9775e6b.chunk.css",
-    "main.js": "/sav-connect-client/static/js/main.70a4231d.chunk.js",
-    "main.js.map": "/sav-connect-client/static/js/main.70a4231d.chunk.js.map",
+    "main.js": "/sav-connect-client/static/js/main.29f5e8f4.chunk.js",
+    "main.js.map": "/sav-connect-client/static/js/main.29f5e8f4.chunk.js.map",
     "runtime-main.js": "/sav-connect-client/static/js/runtime-main.b5e89259.js",
     "runtime-main.js.map": "/sav-connect-client/static/js/runtime-main.b5e89259.js.map",
     "static/js/2.ee503140.chunk.js": "/sav-connect-client/static/js/2.ee503140.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.b5e89259.js",
     "static/js/2.ee503140.chunk.js",
     "static/css/main.c9775e6b.chunk.css",
-    "static/js/main.70a4231d.chunk.js"
+    "static/js/main.29f5e8f4.chunk.js"
   ]
 }
